@@ -3,7 +3,7 @@
 KzgMultiProofGnarkBackend.ComputeMultiFrameProof:
     proof(f) = F * h(f)
              = F * Toeplitz(f) * s
-             = F * (Toeplitz(f2) * s2)[0:l]
+             = F * (Cyc(f2) * s2)[0:l]
              = F * (F2_inv * diag(F2 * f2) * (F2 * s2))[0:l]
 
 SRSTable.PrecomputeSubTable:
@@ -20,8 +20,8 @@ constants:
     l: chunklen
 theorems:
     proof(f) = F * h(f)
-    h(f) = Toeplitz(f2) * s
-    Toeplitz(f) = F_inv * diag(F * f) * F
+    h(f) = Toeplitz(f) * s
+    Cyc(f) = F_inv * diag(F * f) * F
 definitions:
     proof(f)[k] = (f(x) - f(s)) / (x - s), x = w^k
     h(f)[k] = f[k:m] . s[0:m-k]
