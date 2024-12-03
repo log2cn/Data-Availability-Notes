@@ -27,6 +27,12 @@ definitions:
     h(f)[k] = f[k:m] . s[0:m-k]
 ```
 
+refs:
+
+[Multiplying a Toeplitz matrix by a vector](https://alinush.github.io/2020/03/19/multiplying-a-vector-by-a-toeplitz-matrix.html)
+
+[PCS multiproofs using random evaluation](https://dankradfeist.de/ethereum/2021/06/18/pcs-multiproofs.html)
+
 # Data flow diagram
 
 Recommended VS Code extention: [markdown-mermaid](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid).
@@ -40,6 +46,8 @@ blobstore -- []byte --> encserver
 blobstore --> relay.Server.GetBlob
 
 encserver -- []byte --> prover
+prover --> Encoder.Encode --> GetInterpolationPolyCoeff
+%% coeffs(k)[i] = fft(chunk)[i] * w^(-ik)
 prover -- []fr.Element --> prover1
 prover1 -- []bn254.G1Affine --> prover
 prover -- []encoding.Frame --> encserver
