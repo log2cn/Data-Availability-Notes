@@ -40,37 +40,33 @@ blobstore -- []byte --> encserver
 blobstore --> relay.Server.GetBlob
 
 encserver -- []byte --> prover
-prover -- []encoding.Frame --> encserver
-
 prover -- []fr.Element --> prover1
 prover1 -- []bn254.G1Affine --> prover
-%% prover1: polyFr ->(GetSlicesCoeff) coeffStore -> sumVec -> fft_inv -> fft -> proof
-%% fft: fast compute polynomial value using Toeplitz Matrix
+prover -- []encoding.Frame --> encserver
 
 encserver -- v2.FragmentInfo --> encmgr
 
-relay -- []merkletree.Proof []encoding.Frame --> node
+relay -- []encoding.Frame --> node
 
-dispatcher -- BatchHeader.BatchRoot []v2.BlobHeader --> node
+dispatcher -- []v2.BlobHeader --> node
 node -- Signature --> dispatcher
 
 encserver -- []encoding.Frame --> chunkstore
 chunkstore -- v2.FragmentInfo --> encserver
 chunkstore -- []encoding.Frame --> relay
 
-node -- BatchHeader.BatchRoot []v2.BlobHeader --> ValidateBatchHeader 
-node -- []BlobHeader.BlobCommitment []merkletree.Proof []encoding.Frame --> ValidateBlobs --> Verifier.UniversalVerify
+node -- []v2.BlobHeader --> v2.ValidateBatchHeader 
+node -- []BlobCommitment.Commitment []encoding.Frame --> v2.ValidateBlobs --> Verifier.UniversalVerify
 node -- []BlobHeader.BlobCommitment --> verify[VerifyBlobLength VerifyCommitEquivalenceBatch]
 node --> batchstore --> ServerV2.GetChunks
 
 encmgr -- []v2.BlobHeader --> certstore
 certstore -- []v2.BlobHeader --> newbatch
 
-newbatch -- BatchHeader.BatchRoot []v2.BlobHeader --> dispatcher
+newbatch -- []v2.BlobHeader --> dispatcher
 dispatcher --> Dispatcher.HandleSignatures
 
 newbatch -- []merkletree.Proof --> verifstore 
-verifstore -- []merkletree.Proof --> relay
 
 newbatch[Dispatcher.NewBatch]
 dispatcher[Dispatcher.HandleBatch]
@@ -92,19 +88,18 @@ certstore[(BlobMetadataStore)]
 # Data structures
 ```
 encoding.Frame: 
-    Proof: bn254.G1Affine
+    Proof:  bn254.G1Affine
     Coeffs: fr.Element
 
 v2.Batch:
     ReferenceBlockNumber: uint64
-    []v2.BlobCertificate: v2.BlobHeader
+    BlobCertificates:     []v2.BlobHeader
 
 v2.BlobHeader:
-    BlobCommitment
-        Commitment: []byte
-        LengthCommitment: []byte
-        LengthProof: []byte
-        Length: uint32
+    Commitment:       []byte
+    LengthCommitment: []byte
+    LengthProof:      []byte
+    Length:           uint32
 ```
 
 # Finite field elements
