@@ -29,7 +29,7 @@ definitions:
 
 # Data flow diagram
 
-You can convert Mermaid source code into an image using the [VS Code extention](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid).
+Recommended VS Code extention: [markdown-mermaid](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid).
 
 ```mermaid
 flowchart TB
@@ -58,9 +58,9 @@ encserver -- []encoding.Frame --> chunkstore
 chunkstore -- v2.FragmentInfo --> encserver
 chunkstore -- []encoding.Frame --> relay
 
-node -- BatchHeader.BatchRoot []v2.BlobHeader --> validate1 
-node -- []BlobHeader.BlobCommitment []merkletree.Proof []encoding.Frame --> validate2
-node -- []BlobHeader.BlobCommitment --> validate3
+node -- BatchHeader.BatchRoot []v2.BlobHeader --> ValidateBatchHeader 
+node -- []BlobHeader.BlobCommitment []merkletree.Proof []encoding.Frame --> ValidateBlobs --> Verifier.UniversalVerify
+node -- []BlobHeader.BlobCommitment --> verify[VerifyBlobLength VerifyCommitEquivalenceBatch]
 node --> batchstore --> ServerV2.GetChunks
 
 encmgr -- []v2.BlobHeader --> certstore
@@ -82,9 +82,6 @@ encserver[EncoderServerV2.handleEncodingToChunkStore]
 relay[relay.Server.GetChunks]
 node[*node* ServerV2.StoreChunks]
 batchstore[(node.StoreV2)]
-validate1[ValidateBatchHeader]
-validate2[ValidateBlobs Verifier.UniversalVerify]
-validate3[VerifyBlobLength VerifyCommitEquivalenceBatch]
 
 blobstore[(blobstore)]
 chunkstore[(chunkstore)]
