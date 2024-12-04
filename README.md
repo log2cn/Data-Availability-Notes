@@ -1,37 +1,57 @@
-# Math foundation
+# Math
 ```
+Encoder.Encode:
+    input[n,l]
+    coeff[n,l] // output
+    coeff[i] = [w^(-ij)] @ (F_inv * (F * inputFr)[i*l:i*(l+1)]) // i in [0:n], j in [0:l]
+    coeff = F * F_inv * (F * input)
+          = (F * input)
+
 KzgMultiProofGnarkBackend.ComputeMultiFrameProof:
     proof(f) = F * h(f)
              = F * Toeplitz(f) * s
-             = F * (Cyc(f2) * s2)[0:l]
-             = F * (F2_inv * diag(F2 * f2) * (F2 * s2))[0:l]
+             = F * (Cyc(f2) * s2)[0:n]
+             = F * (F_inv * diag(F * f2) * (F * s2))[0:n]
+             = F * (F_inv * (F * f2) * (F * s2))[0:n]
+             = F * (F_inv * (coeffStore * FFTPointsT))[0:n]
+    // The inner product of two vectors of length l
+    (coeffStore * FFTPointsT)[i] = coeffStore[i] @ FFTPointsT[i] // i in [0:2n] 
 
-SRSTable.PrecomputeSubTable:
-    s2[0:l]  = SRSTable.s1[start:start+l]
-    s2[l:2l] = 0
-    return = F2 * s2
+KzgMultiProofGnarkBackend.computeCoeffStore:
+    coeffStore = F * f[2n,l]
+    coeffStore.col(j) = F * f2[..., m-j-2l, m-j-l]
+SRSTable.Precompute:
+    FFTPointsT = F * s[2n,l]
+    FFTPointsT.col(j) = F * s2[..., m-j-2l, m-j-l]
 
 variables:
     f: coefficients
 constants:
-    s: s^0, s^1, ...
-    x: w, w^2, ..., w^l
+    s: s^0, s^1, ..., s^nl
     F: Fourier Matrix
     l: chunklen
+    n: numchunks
 theorems:
     proof(f) = F * h(f)
     h(f) = Toeplitz(f) * s
     Cyc(f) = F_inv * diag(F * f) * F
 definitions:
-    proof(f)[k] = (f(x) - f(s)) / (x - s), x = w^k
-    h(f)[k] = f[k:m] . s[0:m-k]
+    proof(f) = (f(x) - f(s)) / (x - s), x = w, w^2, ..., w^n
 ```
 
-refs:
+## Refs on Toeplitz matrix
 
-[Multiplying a Toeplitz matrix by a vector](https://alinush.github.io/2020/03/19/multiplying-a-vector-by-a-toeplitz-matrix.html)
+[1] [Multiplying a Toeplitz matrix by a vector](https://alinush.github.io/2020/03/19/multiplying-a-vector-by-a-toeplitz-matrix.html)
 
-[PCS multiproofs using random evaluation](https://dankradfeist.de/ethereum/2021/06/18/pcs-multiproofs.html)
+[2] [Fast amortized Kate proofs](https://github.com/khovratovich/Kate/blob/master/Kate_amortized.pdf)
+
+## Refs on proof
+
+[3] [A Universal Verification Equation for Data Availability Sampling](https://ethresear.ch/t/a-universal-verification-equation-for-data-availability-sampling/13240)
+
+[4] [KZG polynomial commitments](https://dankradfeist.de/ethereum/2020/06/16/kate-polynomial-commitments.html)
+
+[5] [PCS multiproofs using random evaluation](https://dankradfeist.de/ethereum/2021/06/18/pcs-multiproofs.html)
 
 # Data flow diagram
 
@@ -46,13 +66,13 @@ blobstore -- []byte --> encserver
 blobstore --> relay.Server.GetBlob
 
 encserver -- []byte --> prover
-prover --> Encoder.Encode --> GetInterpolationPolyCoeff
-%% coeffs(k)[i] = fft(chunk)[i] * w^(-ik)
+prover -- []fr.Element --> encoder
+encoder -- []coeffs --> prover
 prover -- []fr.Element --> prover1
 prover1 -- []bn254.G1Affine --> prover
 prover -- []encoding.Frame --> encserver
 
-encserver -- v2.FragmentInfo --> encmgr
+encserver --> encmgr
 
 relay -- []encoding.Frame --> node
 
@@ -60,7 +80,6 @@ dispatcher -- []v2.BlobHeader --> node
 node -- Signature --> dispatcher
 
 encserver -- []encoding.Frame --> chunkstore
-chunkstore -- v2.FragmentInfo --> encserver
 chunkstore -- []encoding.Frame --> relay
 
 node -- []v2.BlobHeader --> v2.ValidateBatchHeader 
@@ -68,18 +87,17 @@ node -- []BlobCommitment.Commitment []encoding.Frame --> v2.ValidateBlobs --> Ve
 node -- []BlobHeader.BlobCommitment --> verify[VerifyBlobLength VerifyCommitEquivalenceBatch]
 node --> batchstore --> ServerV2.GetChunks
 
-encmgr -- []v2.BlobHeader --> certstore
-certstore -- []v2.BlobHeader --> newbatch
+encmgr -- []v2.BlobHeader --> headerstore
+headerstore -- []v2.BlobHeader --> newbatch
 
 newbatch -- []v2.BlobHeader --> dispatcher
 dispatcher --> Dispatcher.HandleSignatures
-
-newbatch -- []merkletree.Proof --> verifstore 
 
 newbatch[Dispatcher.NewBatch]
 dispatcher[Dispatcher.HandleBatch]
 prover[Prover.GetFrames]
 prover1[ComputeMultiFrameProof]
+encoder[Encoder.Encode]
 encmgr[EncodingManager.HandleBatch]
 encserver[EncoderServerV2.handleEncodingToChunkStore]
 
@@ -89,8 +107,7 @@ batchstore[(node.StoreV2)]
 
 blobstore[(blobstore)]
 chunkstore[(chunkstore)]
-verifstore[(BlobMetadataStore)]
-certstore[(BlobMetadataStore)]
+headerstore[(BlobMetadataStore)]
 ```
 
 # Data structures
