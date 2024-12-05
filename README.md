@@ -59,6 +59,8 @@ definitions:
 
 [vbuterin: 2D data availability with Kate commitments](https://ethresear.ch/t/2d-data-availability-with-kate-commitments/8081)
 
+[vbuterin: A note on data availability and erasure coding](https://github.com/ethereum/research/wiki/A-note-on-data-availability-and-erasure-coding)
+
 [ingonyama-zk/icicle: A hardware acceleration library for compute intensive cryptography](https://github.com/ingonyama-zk/icicle)
 
 [protolambda/go-kzg: KZG and FFT utils](https://github.com/protolambda/go-kzg)
