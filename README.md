@@ -41,31 +41,31 @@ definitions:
 
 ## Refs 
 
-[1] [Multiplying a Toeplitz matrix by a vector](https://alinush.github.io/2020/03/19/multiplying-a-vector-by-a-toeplitz-matrix.html)
+[**ingonyama-zk/papers: A Mathematical Theory of Danksharding**](https://github.com/ingonyama-zk/papers/blob/main/danksharding_math.pdf)
 
-[2] [Fast amortized Kate proofs](https://github.com/khovratovich/Kate/blob/master/Kate_amortized.pdf)
+[Multiplying a Toeplitz matrix by a vector](https://alinush.github.io/2020/03/19/multiplying-a-vector-by-a-toeplitz-matrix.html)
 
-[3] [A Universal Verification Equation for Data Availability Sampling](https://ethresear.ch/t/a-universal-verification-equation-for-data-availability-sampling/13240)
+[Fast amortized Kate proofs](https://github.com/khovratovich/Kate/blob/master/Kate_amortized.pdf)
 
-[4] [dankradfeist: KZG polynomial commitments](https://dankradfeist.de/ethereum/2020/06/16/kate-polynomial-commitments.html)
+[A Universal Verification Equation for Data Availability Sampling](https://ethresear.ch/t/a-universal-verification-equation-for-data-availability-sampling/13240)
 
-[5] [dankradfeist: PCS multiproofs using random evaluation](https://dankradfeist.de/ethereum/2021/06/18/pcs-multiproofs.html)
+[dankradfeist: KZG polynomial commitments](https://dankradfeist.de/ethereum/2020/06/16/kate-polynomial-commitments.html)
 
-[6] [dankrad: Data availability encoding: Reverse Bit Order](https://notes.ethereum.org/@dankrad/danksharding_encoding)
+[dankradfeist: PCS multiproofs using random evaluation](https://dankradfeist.de/ethereum/2021/06/18/pcs-multiproofs.html)
 
-[7] [vbuterin: Data Availability Sampling Phase 1 Proposal](https://hackmd.io/@vbuterin/das)
+[dankrad: Data availability encoding: Reverse Bit Order](https://notes.ethereum.org/@dankrad/danksharding_encoding)
 
-[8] [vbuterin: 2D data availability with Kate commitments](https://ethresear.ch/t/2d-data-availability-with-kate-commitments/8081)
+[vbuterin: Data Availability Sampling Phase 1 Proposal](https://hackmd.io/@vbuterin/das)
 
-[9] [ingonyama-zk/papers: A Mathematical Theory of Danksharding](https://github.com/ingonyama-zk/papers/blob/main/danksharding_math.pdf)
+[vbuterin: 2D data availability with Kate commitments](https://ethresear.ch/t/2d-data-availability-with-kate-commitments/8081)
 
-[10] [ingonyama-zk/icicle: A hardware acceleration library for compute intensive cryptography](https://github.com/ingonyama-zk/icicle)
+[ingonyama-zk/icicle: A hardware acceleration library for compute intensive cryptography](https://github.com/ingonyama-zk/icicle)
 
-[11] [protolambda/go-kzg: KZG and FFT utils](https://github.com/protolambda/go-kzg)
+[protolambda/go-kzg: KZG and FFT utils](https://github.com/protolambda/go-kzg)
 
 # Data flow diagram
 
-Recommended VS Code extention: [markdown-mermaid](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid).
+Recommended VS Code extention: [markdown-mermaid](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)
 
 ```mermaid
 flowchart TB
