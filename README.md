@@ -51,7 +51,9 @@ definitions:
 
 [dankradfeist: PCS multiproofs using random evaluation](https://dankradfeist.de/ethereum/2021/06/18/pcs-multiproofs.html)
 
-[dankrad: Data availability encoding: Reverse Bit Order](https://notes.ethereum.org/@dankrad/danksharding_encoding)
+[dankradfeist: Fast amortized Kate proofs](https://github.com/khovratovich/Kate/blob/master/Kate_amortized.pdf)
+
+[dankradfeist: Data availability encoding: Reverse Bit Order](https://notes.ethereum.org/@dankrad/danksharding_encoding)
 
 [vbuterin: Data Availability Sampling Phase 1 Proposal](https://hackmd.io/@vbuterin/das)
 
