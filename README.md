@@ -61,6 +61,8 @@ definitions:
 
 [vbuterin: A note on data availability and erasure coding](https://github.com/ethereum/research/wiki/A-note-on-data-availability-and-erasure-coding)
 
+[ethereum/consensus-specs: polynomial-commitments-sampling.md](https://github.com/ethereum/consensus-specs/blob/dev/specs/fulu/polynomial-commitments-sampling.md)
+
 [ingonyama-zk/icicle: A hardware acceleration library for compute intensive cryptography](https://github.com/ingonyama-zk/icicle)
 
 [protolambda/go-kzg: KZG and FFT utils](https://github.com/protolambda/go-kzg)
