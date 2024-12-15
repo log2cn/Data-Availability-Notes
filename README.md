@@ -18,13 +18,15 @@
 
 [A note on data availability and erasure coding](https://github.com/ethereum/research/wiki/A-note-on-data-availability-and-erasure-coding)
 
-[ingonyama-zk/icicle: A hardware acceleration library for compute intensive cryptography](https://github.com/ingonyama-zk/icicle)
-
-[protolambda/go-kzg: KZG and FFT utils](https://github.com/protolambda/go-kzg)
+[ethereum/c-kzg-4844](https://github.com/ethereum/c-kzg-4844)
 
 [Fast amortized Kate proofs](https://github.com/khovratovich/Kate/blob/master/Kate_amortized.pdf)
 
 [Multiplying a Toeplitz matrix by a vector](https://alinush.github.io/2020/03/19/multiplying-a-vector-by-a-toeplitz-matrix.html)
+
+[ingonyama-zk/icicle: A hardware acceleration library for compute intensive cryptography](https://github.com/ingonyama-zk/icicle)
+
+[protolambda/go-kzg: KZG and FFT utils](https://github.com/protolambda/go-kzg)
 
 # Math
 ```
