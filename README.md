@@ -1,6 +1,6 @@
 # Refs 
 
-[Data availability encoding: Reverse Bit Order](https://notes.ethereum.org/@dankrad/danksharding_encoding)
+[Data availability encoding](https://notes.ethereum.org/@dankrad/danksharding_encoding)
 
 [A Universal Verification Equation for Data Availability Sampling](https://ethresear.ch/t/a-universal-verification-equation-for-data-availability-sampling/13240)
 
