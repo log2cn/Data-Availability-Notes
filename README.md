@@ -16,8 +16,6 @@
 
 [2D data availability with Kate commitments](https://ethresear.ch/t/2d-data-availability-with-kate-commitments/8081)
 
-[A note on data availability and erasure coding](https://github.com/ethereum/research/wiki/A-note-on-data-availability-and-erasure-coding)
-
 [ethereum/c-kzg-4844](https://github.com/ethereum/c-kzg-4844)
 
 [Fast amortized Kate proofs](https://github.com/khovratovich/Kate/blob/master/Kate_amortized.pdf)
@@ -27,6 +25,8 @@
 [ingonyama-zk/icicle: A hardware acceleration library for compute intensive cryptography](https://github.com/ingonyama-zk/icicle)
 
 [protolambda/go-kzg: KZG and FFT utils](https://github.com/protolambda/go-kzg)
+
+[A note on data availability and erasure coding](https://github.com/ethereum/research/wiki/A-note-on-data-availability-and-erasure-coding)
 
 # Math
 ```
