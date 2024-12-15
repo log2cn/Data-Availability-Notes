@@ -41,31 +41,31 @@ definitions:
 
 ## Refs 
 
-[**ingonyama-zk/papers: A Mathematical Theory of Danksharding**](https://github.com/ingonyama-zk/papers/blob/main/danksharding_math.pdf)
-
-[Multiplying a Toeplitz matrix by a vector](https://alinush.github.io/2020/03/19/multiplying-a-vector-by-a-toeplitz-matrix.html)
+[Data availability encoding: Reverse Bit Order](https://notes.ethereum.org/@dankrad/danksharding_encoding)
 
 [A Universal Verification Equation for Data Availability Sampling](https://ethresear.ch/t/a-universal-verification-equation-for-data-availability-sampling/13240)
 
-[dankradfeist: KZG polynomial commitments](https://dankradfeist.de/ethereum/2020/06/16/kate-polynomial-commitments.html)
+[ethereum/consensus-specs/specs/fulu/polynomial-commitments-sampling.md](https://github.com/ethereum/consensus-specs/blob/dev/specs/fulu/polynomial-commitments-sampling.md)
 
-[dankradfeist: PCS multiproofs using random evaluation](https://dankradfeist.de/ethereum/2021/06/18/pcs-multiproofs.html)
+[ingonyama-zk/papers: A Mathematical Theory of Danksharding](https://github.com/ingonyama-zk/papers/blob/main/danksharding_math.pdf)
 
-[dankradfeist: Fast amortized Kate proofs](https://github.com/khovratovich/Kate/blob/master/Kate_amortized.pdf)
+[KZG polynomial commitments](https://dankradfeist.de/ethereum/2020/06/16/kate-polynomial-commitments.html)
 
-[dankradfeist: Data availability encoding: Reverse Bit Order](https://notes.ethereum.org/@dankrad/danksharding_encoding)
+[PCS multiproofs using random evaluation](https://dankradfeist.de/ethereum/2021/06/18/pcs-multiproofs.html)
 
-[vbuterin: Data Availability Sampling Phase 1 Proposal](https://hackmd.io/@vbuterin/das)
+[Data Availability Sampling Phase 1 Proposal](https://hackmd.io/@vbuterin/das)
 
-[vbuterin: 2D data availability with Kate commitments](https://ethresear.ch/t/2d-data-availability-with-kate-commitments/8081)
+[2D data availability with Kate commitments](https://ethresear.ch/t/2d-data-availability-with-kate-commitments/8081)
 
-[vbuterin: A note on data availability and erasure coding](https://github.com/ethereum/research/wiki/A-note-on-data-availability-and-erasure-coding)
-
-[ethereum/consensus-specs: polynomial-commitments-sampling.md](https://github.com/ethereum/consensus-specs/blob/dev/specs/fulu/polynomial-commitments-sampling.md)
+[A note on data availability and erasure coding](https://github.com/ethereum/research/wiki/A-note-on-data-availability-and-erasure-coding)
 
 [ingonyama-zk/icicle: A hardware acceleration library for compute intensive cryptography](https://github.com/ingonyama-zk/icicle)
 
 [protolambda/go-kzg: KZG and FFT utils](https://github.com/protolambda/go-kzg)
+
+[Fast amortized Kate proofs](https://github.com/khovratovich/Kate/blob/master/Kate_amortized.pdf)
+
+[Multiplying a Toeplitz matrix by a vector](https://alinush.github.io/2020/03/19/multiplying-a-vector-by-a-toeplitz-matrix.html)
 
 # Data flow diagram
 
