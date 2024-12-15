@@ -39,7 +39,7 @@ definitions:
     proof(f) = (f(x) - f(s)) / (x - s), x = w, w^2, ..., w^n
 ```
 
-## Refs 
+# Refs 
 
 [Data availability encoding: Reverse Bit Order](https://notes.ethereum.org/@dankrad/danksharding_encoding)
 
