@@ -30,7 +30,7 @@
 
 [availproject/plonk](https://github.com/availproject/plonk/blob/v0.12.0-polygon-2/src/commitment_scheme/kzg10/key.rs#L297)
 
-# Math
+# Math (rm)
 ```
 Encoder.Encode:
     input[n,l]
