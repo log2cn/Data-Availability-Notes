@@ -1,3 +1,37 @@
+# eigenDA
+```
+Encoder.Encode:
+    n: NumChunks
+    l: ChunkLength
+    i = 1, 2, ..., n // i = 0 without loss of generality
+    j = 1, 2, ..., l
+    P: reverse bit permutation
+    encoder.PadPolyEval:
+        pdCoeffs = data
+    encoder.MakeFrames:
+        polyEvals = F * pdCoeffs // eval form
+    ParametrizedEncoder.MakeFrames:
+        // "**" means mul by entry, do sum j when verify in the future
+        frames[i] = [w^(-ij): j = 1, 2, ..., l] ** F^(-1) * polyEvals[P(i)] 
+        frames[P(i)] = [w^(-ij): j = 1, 2, ..., l] ** F^(-1) * polyEvals[i]
+KzgMultiProofGnarkBackend.ComputeMultiFrameProof:
+    proof(f) = F * h(f)
+             = F * Toeplitz(f) * s
+             = F * (Cyc(f2) * s2)[0:n]
+             = F * (F_inv * diag(F * f2) * (F * s2))[0:n]
+             = F * (F_inv * (F * f2) * (F * s2))[0:n]
+             = F * (F_inv * (coeffStore * FFTPointsT))[0:n]
+    (coeffStore * FFTPointsT)[i] = coeffStore[i] @ FFTPointsT[i] // i in [0:2n] 
+Verifier.UniversalVerify:
+    m: numBlobs
+    K: randomsFr // k = 1 without loss of generality
+    genRhsG1:
+        aggCommit: commits @ K // sum over samples in row i
+        aggPolyG1: sum_j(frames[i]) @ K
+        offsetG1: [h_k: k = 1, 2, ..., K]^D @ proofs @ K
+        rhsG1 = aggCommit - aggPolyG1 + offsetG1
+```
+
 # Refs 
 
 [Layr-Labs/eigenda](https://github.com/Layr-Labs/eigenda)
@@ -33,7 +67,6 @@
 [availproject/plonk](https://github.com/availproject/plonk/blob/v0.12.0-polygon-2/src/commitment_scheme/kzg10/key.rs#L297)
 
 # Math
-
 ```
     Coeff = F^(-1) * P * Y // compute Coeff from Y
 <=> F * Coeff = P * Y
