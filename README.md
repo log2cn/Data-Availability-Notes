@@ -32,6 +32,14 @@
 
 [availproject/plonk](https://github.com/availproject/plonk/blob/v0.12.0-polygon-2/src/commitment_scheme/kzg10/key.rs#L297)
 
+# Math
+
+```
+    Coeff = F_inv * P * Y
+<=> F * Coeff = P * Y
+<=> Y = P * F * Coeff
+```
+
 # Data flow diagram
 
 Recommended VS Code extention: [markdown-mermaid](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)
