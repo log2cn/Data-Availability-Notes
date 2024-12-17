@@ -39,8 +39,10 @@
 <=> F * Coeff = P * Y
 <=> Y = P * F * Coeff // Y[i] = Coeff(w^rbo(i))
 
-F = [w^(ij)] // i, j = 0, 1, ..., N-1
-F^(-1) = N^(-1) * [w^(-ij)]
+theorems:
+    P^2 = I // bit reversal permutation
+    F = [w^(ij)] where i, j = 0, 1, ..., N-1
+    F^(-1) = N^(-1) * [w^(-ij)] where i, j = 0, 1, ..., N-1
 ```
 
 # Data flow diagram
