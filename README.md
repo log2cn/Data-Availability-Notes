@@ -40,7 +40,7 @@
 <=> Y = P * F * Coeff // Y[i] = Coeff(w^rbo(i))
 
 theorems:
-    P^2 = I // bit reversal permutation
+    P^2 = I // bit reversal permutation matrix
     F = [w^(ij)] where i, j = 0, 1, ..., N-1
     F^(-1) = N^(-1) * [w^(-ij)] where i, j = 0, 1, ..., N-1
 ```
