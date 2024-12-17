@@ -6,8 +6,6 @@ Encoder.Encode:
     i = 1, 2, ..., n // i = 0 without loss of generality
     j = 1, 2, ..., l
     P: reverse bit permutation
-    encoder.PadPolyEval:
-        pdCoeffs = data
     encoder.MakeFrames:
         polyEvals = F * pdCoeffs // eval form
     ParametrizedEncoder.MakeFrames:
