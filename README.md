@@ -3,13 +3,13 @@
 Encoder.Encode:
     i = 1, 2, ..., n // NumChunks
     j = 1, 2, ..., l // ChunkLength
-    P: reverse bit permutation, at ReverseBitsLimited
+    rbo(j): ReverseBitsLimited(ChunkLength, j)
     encoder.MakeFrames:
         polyEvals = F * pdCoeffs // eval form
     ParametrizedEncoder.MakeFrames:
         // "**" means mul by entry, do sum j when verify in the future
-        frames[i] = [w^(-ij): j = 1, 2, ..., l] ** F^(-1) * polyEvals[P(i)] 
-        frames[P(i)] = [w^(-P(i)j): j = 1, 2, ..., l] ** F^(-1) * polyEvals[i]
+        frames[i] = [w^(-ij): j = 1, 2, ..., l] ** F^(-1) * polyEvals[rbo(i)] 
+        frames[rbo(i)] = [w^(-rbo(i)j): j = 1, 2, ..., l] ** F^(-1) * polyEvals[i]
 KzgMultiProofGnarkBackend.ComputeMultiFrameProof:
     proof(f) = F * h(f)
              = F * Toeplitz(f) * s
@@ -24,8 +24,7 @@ Verifier.UniversalVerify:
     genRhsG1:
         aggCommit: commits @ K // sum over samples in rows
         aggPolyG1: sum_j(frames[i]) @ K
-        offsetG1: [h_k: k = 1, 2, ..., K]^l @ proofs @ K
-            h_k = w^P(samples[k].id) // at Verifier.UniversalVerifySubBatch
+        offsetG1: [w^rbo(samples[k].id): k = 1, 2, ..., K]^l @ proofs @ K // rbo at Verifier.UniversalVerifySubBatch
         rhsG1 = aggCommit - aggPolyG1 + offsetG1
 ```
 
