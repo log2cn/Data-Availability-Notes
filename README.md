@@ -3,7 +3,7 @@
 Encoder.Encode:
     i = 1, 2, ..., n // NumChunks
     j = 1, 2, ..., l // ChunkLength
-    rbo(j): ReverseBitsLimited(ChunkLength, j)
+    rbo(i): ReverseBitsLimited(NumChunks, i)
     encoder.MakeFrames:
         polyEvals = F * pdCoeffs // eval form
     ParametrizedEncoder.MakeFrames:
