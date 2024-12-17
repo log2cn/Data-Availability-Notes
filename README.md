@@ -24,7 +24,7 @@ Verifier.UniversalVerify:
     m: numBlobs
     K: randomsFr // k = 1 without loss of generality
     genRhsG1:
-        aggCommit: commits @ K // sum over samples in row i
+        aggCommit: commits @ K // sum over samples in rows
         aggPolyG1: sum_j(frames[i]) @ K
         offsetG1: [h_k: k = 1, 2, ..., K]^l @ proofs @ K
             h_k = w^P(samples[k].id) // at Verifier.UniversalVerifySubBatch
