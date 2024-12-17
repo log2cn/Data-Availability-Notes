@@ -78,6 +78,8 @@ theorems:
 ```mermaid
 flowchart TB
 
+RetrievalClient.GetBlob
+
 disperser -- []byte --> blobstore
 
 blobstore -- []byte --> encserver
