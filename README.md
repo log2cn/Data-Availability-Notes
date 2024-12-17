@@ -32,47 +32,6 @@
 
 [availproject/plonk](https://github.com/availproject/plonk/blob/v0.12.0-polygon-2/src/commitment_scheme/kzg10/key.rs#L297)
 
-# Math (rm)
-```
-Encoder.Encode:
-    input[n,l]
-    coeff[n,l] // output
-    coeff[i] = [w^(-ij)] @ (F_inv * (F * inputFr)[i*l:i*(l+1)]) // i in [0:n], j in [0:l]
-    coeff = F * F_inv * (F * input)
-          = (F * input)
-
-KzgMultiProofGnarkBackend.ComputeMultiFrameProof:
-    proof(f) = F * h(f)
-             = F * Toeplitz(f) * s
-             = F * (Cyc(f2) * s2)[0:n]
-             = F * (F_inv * diag(F * f2) * (F * s2))[0:n]
-             = F * (F_inv * (F * f2) * (F * s2))[0:n]
-             = F * (F_inv * (coeffStore * FFTPointsT))[0:n]
-    // The inner product of two vectors of length l
-    (coeffStore * FFTPointsT)[i] = coeffStore[i] @ FFTPointsT[i] // i in [0:2n] 
-
-KzgMultiProofGnarkBackend.computeCoeffStore:
-    coeffStore = F * f[2n,l]
-    coeffStore.col(j) = F * f2[..., m-j-2l, m-j-l]
-SRSTable.Precompute:
-    FFTPointsT = F * s[2n,l]
-    FFTPointsT.col(j) = F * s2[..., m-j-2l, m-j-l]
-
-variables:
-    f: coefficients
-constants:
-    s: s^0, s^1, ..., s^nl
-    F: Fourier Matrix
-    l: chunklen
-    n: numchunks
-theorems:
-    proof(f) = F * h(f)
-    h(f) = Toeplitz(f) * s
-    Cyc(f) = F_inv * diag(F * f) * F
-definitions:
-    proof(f) = (f(x) - f(s)) / (x - s), x = w, w^2, ..., w^n
-```
-
 # Data flow diagram
 
 Recommended VS Code extention: [markdown-mermaid](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)
