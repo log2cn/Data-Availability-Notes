@@ -5,7 +5,7 @@ Encoder.Encode:
     l: ChunkLength
     i = 1, 2, ..., n // i = 0 without loss of generality
     j = 1, 2, ..., l
-    P: reverse bit permutation
+    P: reverse bit permutation, at ReverseBitsLimited
     encoder.MakeFrames:
         polyEvals = F * pdCoeffs // eval form
     ParametrizedEncoder.MakeFrames:
@@ -25,7 +25,7 @@ Verifier.UniversalVerify:
     K: randomsFr // k = 1 without loss of generality
     genRhsG1:
         aggCommit: commits @ K // sum over samples in row i
-        aggPolyG1: sum_j(frames[i]) @ K
+        aggPolyG1: sum_j(frames[P(i)]) @ K // do P at Verifier.UniversalVerifySubBatch
         offsetG1: [h_k: k = 1, 2, ..., K]^D @ proofs @ K
         rhsG1 = aggCommit - aggPolyG1 + offsetG1
 ```
