@@ -8,7 +8,7 @@ Encoder.Encode:
         polyEvals = F * pdCoeffs // eval form
     ParametrizedEncoder.MakeFrames:
         // "**" means mul by entry, do sum j when verify in the future
-        frames[i] = [w^(-ij): j = 1, 2, ..., l] ** F^(-1) * P * polyEvals[rbo(i)] 
+        frames[i] = [w^(-rbo(i)j): j = 1, 2, ..., l] ** F^(-1) * P * polyEvals[rbo(i)] 
 KzgMultiProofGnarkBackend.ComputeMultiFrameProof:
     proof(f) = F * h(f)
              = F * Toeplitz(f) * s
