@@ -46,9 +46,6 @@ theorems:
 ```
 
 # Data flow diagram
-
-Recommended VS Code extention: [markdown-mermaid](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)
-
 ```mermaid
 flowchart TB
 
