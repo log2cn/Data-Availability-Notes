@@ -25,8 +25,9 @@ Verifier.UniversalVerify:
     K: randomsFr // k = 1 without loss of generality
     genRhsG1:
         aggCommit: commits @ K // sum over samples in row i
-        aggPolyG1: sum_j(frames[P(i)]) @ K // do P at Verifier.UniversalVerifySubBatch
+        aggPolyG1: sum_j(frames[i]) @ K
         offsetG1: [h_k: k = 1, 2, ..., K]^D @ proofs @ K
+            h_k = P(sample.id) // at Verifier.UniversalVerifySubBatch
         rhsG1 = aggCommit - aggPolyG1 + offsetG1
 ```
 
