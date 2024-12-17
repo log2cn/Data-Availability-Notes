@@ -35,9 +35,9 @@
 # Math
 
 ```
-    Coeff = F_inv * P * Y
+    Coeff = F_inv * P * Y // compute Coeff from Y
 <=> F * Coeff = P * Y
-<=> Y = P * F * Coeff
+<=> Y = P * F * Coeff // Y[i] = Coeff(w^rbo(i))
 ```
 
 # Data flow diagram
