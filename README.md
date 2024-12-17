@@ -26,7 +26,7 @@ Verifier.UniversalVerify:
     genRhsG1:
         aggCommit: commits @ K // sum over samples in row i
         aggPolyG1: sum_j(frames[i]) @ K
-        offsetG1: [h_k: k = 1, 2, ..., K]^D @ proofs @ K
+        offsetG1: [h_k: k = 1, 2, ..., K]^l @ proofs @ K
             h_k = w^P(samples[k].id) // at Verifier.UniversalVerifySubBatch
         rhsG1 = aggCommit - aggPolyG1 + offsetG1
 ```
