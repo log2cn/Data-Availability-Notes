@@ -1,10 +1,8 @@
 # eigenDA
 ```
 Encoder.Encode:
-    n: NumChunks
-    l: ChunkLength
-    i = 1, 2, ..., n // i = 0 without loss of generality
-    j = 1, 2, ..., l
+    i = 1, 2, ..., n // NumChunks
+    j = 1, 2, ..., l // ChunkLength
     P: reverse bit permutation, at ReverseBitsLimited
     encoder.MakeFrames:
         polyEvals = F * pdCoeffs // eval form
