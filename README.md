@@ -1,4 +1,4 @@
-# eigenDA
+# EigenDA
 ```
 Encoder.Encode:
     i = 1, 2, ..., n // NumChunks
@@ -72,7 +72,7 @@ theorems:
     F^(-1) = N^(-1) * [w^(-ij)] where i, j = 0, 1, ..., N-1
 ```
 
-# EigenDA Data flow diagram
+# EigenDA data flow diagram
 ```mermaid
 flowchart TB
 
@@ -126,7 +126,7 @@ chunkstore[(chunkstore)]
 headerstore[(BlobMetadataStore)]
 ```
 
-# Data structures
+## Data structures
 ```
 encoding.Frame: 
     Proof:  bn254.G1Affine
