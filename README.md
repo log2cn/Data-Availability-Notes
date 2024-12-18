@@ -141,11 +141,9 @@ v2.BlobHeader:
     LengthCommitment: []byte
     LengthProof:      []byte
     Length:           uint32
-```
 
-# Finite field elements
-```
-fr.Element: [4]uint64
-fp.Element: [4]uint64
-bn254.G1Affine: [2]fp.Element
+Finite field elements:
+    fr.Element: [4]uint64
+    fp.Element: [4]uint64
+    bn254.G1Affine: [2]fp.Element
 ```
