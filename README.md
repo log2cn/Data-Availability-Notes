@@ -72,7 +72,7 @@ theorems:
     F^(-1) = N^(-1) * [w^(-ij)] where i, j = 0, 1, ..., N-1
 ```
 
-# Data flow diagram
+# EigenDA Data flow diagram
 ```mermaid
 flowchart TB
 
