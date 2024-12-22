@@ -53,9 +53,12 @@ Encoder.Encode:
     j = 1, 2, ..., l // ChunkLength
     rbo(i): ReverseBitsLimited(NumChunks, i)
     encoder.MakeFrames:
-        polyEvals = F * pdCoeffs // eval form
+        // eval form
+        polyEvals = F * pdCoeffs 
     ParametrizedEncoder.MakeFrames:
         // "**" means mul by entry, do sum j when verify in the future
+        // f1(w^(rbo(i)x) = F^(-1) * P * polyEvals[rbo(i)] => interpoly(x) = f1(w^(-rbo(i)x)
+        // coeff form of interpoly
         frames[i] = [w^(-rbo(i)j): j = 1, 2, ..., l] ** F^(-1) * P * polyEvals[rbo(i)] 
 KzgMultiProofGnarkBackend.ComputeMultiFrameProof:
     proof(f) = F * Toeplitz(f) * s
