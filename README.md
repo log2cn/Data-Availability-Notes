@@ -18,7 +18,7 @@
 
 [From 4844 to Danksharding: a path to scaling Ethereum DA](https://ethresear.ch/t/from-4844-to-danksharding-a-path-to-scaling-ethereum-da/18046)
 
-[data availability | l2beat](https://l2beat.com/data-availability/summary)
+[Data Availability Summary | l2beat](https://l2beat.com/data-availability/summary)
 
 [2D data availability with Kate commitments](https://ethresear.ch/t/2d-data-availability-with-kate-commitments/8081)
 
