@@ -30,7 +30,7 @@ EIP-7594: [From 4844 to Danksharding: a path to scaling Ethereum DA](https://eth
 
 [ingonyama-zk/icicle](https://github.com/ingonyama-zk/icicle): A hardware acceleration library for compute intensive cryptography
 
-[protolambda/go-kzg](https://github.com/protolambda/go-kzg): KZG and FFT utils
+[protolambda/go-kzg](https://github.com/protolambda/go-kzg): FFT, data-recovery and KZG commitments, in Go
 
 [A note on data availability and erasure coding](https://github.com/ethereum/research/wiki/A-note-on-data-availability-and-erasure-coding)
 
