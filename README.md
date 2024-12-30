@@ -22,15 +22,15 @@ EIP-7594: [From 4844 to Danksharding: a path to scaling Ethereum DA](https://eth
 
 [2D data availability with Kate commitments](https://ethresear.ch/t/2d-data-availability-with-kate-commitments/8081)
 
-[ethereum/c-kzg-4844](https://github.com/ethereum/c-kzg-4844)
+[ethereum/c-kzg-4844](https://github.com/ethereum/c-kzg-4844): A minimal implementation of the Polynomial Commitments API for EIP-4844 and EIP-7594.
 
 [Fast amortized Kate proofs](https://github.com/khovratovich/Kate/blob/master/Kate_amortized.pdf)
 
 [Multiplying a Toeplitz matrix by a vector](https://alinush.github.io/2020/03/19/multiplying-a-vector-by-a-toeplitz-matrix.html)
 
-[ingonyama-zk/icicle](https://github.com/ingonyama-zk/icicle): A hardware acceleration library for compute intensive cryptography
+[ingonyama-zk/icicle](https://github.com/ingonyama-zk/icicle): A hardware acceleration library for compute intensive cryptography.
 
-[protolambda/go-kzg](https://github.com/protolambda/go-kzg): FFT, data-recovery and KZG commitments, in Go
+[protolambda/go-kzg](https://github.com/protolambda/go-kzg): FFT, data-recovery and KZG commitments, in Go.
 
 [A note on data availability and erasure coding](https://github.com/ethereum/research/wiki/A-note-on-data-availability-and-erasure-coding)
 
