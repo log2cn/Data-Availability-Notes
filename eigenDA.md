@@ -55,9 +55,9 @@ headerstore[(BlobMetadataStore)]
 
 # Tests
 
-Kzg proof: core/v2/core_test.go
+Kzg proof: [core/v2/core_test.go](https://github.com/Layr-Labs/eigenda/blob/master/core/v2/core_test.go)
 
-Merkel proof: inabox/tests/integration_v2_test.go
+Merkel proof: [inabox/tests/integration_v2_test.go](https://github.com/Layr-Labs/eigenda/blob/master/inabox/tests/integration_v2_test.go)
 
 
 # Encoding
