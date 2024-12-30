@@ -1,10 +1,14 @@
+# My notes
+
+[eigenDA](https://github.com/log2cn/Data-Availability-Notes/blob/main/eigenDA.md)
+
 # Implementations and underlying libraries
 
 ethereum/consensus-specs: [specs/fulu/polynomial-commitments-sampling.md](https://github.com/ethereum/consensus-specs/blob/dev/specs/fulu/polynomial-commitments-sampling.md)
 
 [ethereum/c-kzg-4844](https://github.com/ethereum/c-kzg-4844): A minimal implementation of the Polynomial Commitments API for EIP-4844 and EIP-7594.
 
-[Layr-Labs/eigenda](https://github.com/Layr-Labs/eigenda)
+[Layr-Labs/eigenda](https://github.com/Layr-Labs/eigenda): Secure, high-throughput, and decentralized Data Availability
 
 [protolambda/go-kzg](https://github.com/protolambda/go-kzg): FFT, data-recovery and KZG commitments, in Go.
 
