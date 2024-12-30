@@ -34,7 +34,7 @@ l2beat: [Data Availability Summary](https://l2beat.com/data-availability/summary
 
 [2D data availability with Kate commitments](https://ethresear.ch/t/2d-data-availability-with-kate-commitments/8081)
 
-[Fast amortized Kate proofs](https://github.com/khovratovich/Kate/blob/master/Kate_amortized.pdf)
+[Fast amortized Kate proofs](https://github.com/khovratovich/Kate/blob/master/Kate_amortized.pdf) ([iacr](https://eprint.iacr.org/2023/033))
 
 [Multiplying a Toeplitz matrix by a vector](https://alinush.github.io/2020/03/19/multiplying-a-vector-by-a-toeplitz-matrix.html)
 
