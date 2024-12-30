@@ -1,35 +1,5 @@
-# Encoding
-```
-Encoder.Encode:
-    i = 1, 2, ..., n // NumChunks
-    j = 1, 2, ..., l // ChunkLength
-    rbo(i): ReverseBitsLimited(NumChunks, i)
-    encoder.MakeFrames:
-        // eval form
-        polyEvals = F * pdCoeffs 
-    ParametrizedEncoder.MakeFrames:
-        // "**" means mul by entry, do sum j when verify in the future
-        // f1(w^(rbo(i)x) = F^(-1) * P * polyEvals[rbo(i)] => interpoly(x) = f1(w^(-rbo(i)x)
-        // coeff form of interpoly
-        frames[i] = [w^(-rbo(i)j): j = 1, 2, ..., l] ** F^(-1) * P * polyEvals[rbo(i)] 
-KzgMultiProofGnarkBackend.ComputeMultiFrameProof:
-    proof(f) = F * Toeplitz(f) * s
-             = F * (Cyc(f2) * s2)[0:n]
-             = F * (F_inv * diag(F * f2) * (F * s2))[0:n]
-             = F * (F_inv * (F * f2) * (F * s2))[0:n]
-             = F * (F_inv * (coeffStore * FFTPointsT))[0:n]
-    (coeffStore * FFTPointsT)[i] = coeffStore[i] @ FFTPointsT[i] // i in [0:2n] 
-Verifier.UniversalVerify:
-    m: numBlobs
-    K: randomsFr // k = 1 without loss of generality
-    genRhsG1:
-        aggCommit: commits @ K // sum over samples in rows
-        aggPolyG1: sum_j(frames[i]) @ K
-        offsetG1: [w^rbo(samples[k].id): k = 1, 2, ..., K]^l @ proofs @ K // rbo at Verifier.UniversalVerifySubBatch
-        rhsG1 = aggCommit - aggPolyG1 + offsetG1
-```
-
 # Data flow diagram
+
 ```mermaid
 flowchart TB
 
@@ -81,6 +51,44 @@ batchstore[(node.StoreV2)]
 blobstore[(blobstore)]
 chunkstore[(chunkstore)]
 headerstore[(BlobMetadataStore)]
+```
+
+# Tests
+
+Kzg proof: core/v2/core_test.go
+
+Merkel proof: inabox/tests/integration_v2_test.go
+
+
+# Encoding
+```
+Encoder.Encode:
+    i = 1, 2, ..., n // NumChunks
+    j = 1, 2, ..., l // ChunkLength
+    rbo(i): ReverseBitsLimited(NumChunks, i)
+    encoder.MakeFrames:
+        // eval form
+        polyEvals = F * pdCoeffs 
+    ParametrizedEncoder.MakeFrames:
+        // "**" means mul by entry, do sum j when verify in the future
+        // f1(w^(rbo(i)x) = F^(-1) * P * polyEvals[rbo(i)] => interpoly(x) = f1(w^(-rbo(i)x)
+        // coeff form of interpoly
+        frames[i] = [w^(-rbo(i)j): j = 1, 2, ..., l] ** F^(-1) * P * polyEvals[rbo(i)] 
+KzgMultiProofGnarkBackend.ComputeMultiFrameProof:
+    proof(f) = F * Toeplitz(f) * s
+             = F * (Cyc(f2) * s2)[0:n]
+             = F * (F_inv * diag(F * f2) * (F * s2))[0:n]
+             = F * (F_inv * (F * f2) * (F * s2))[0:n]
+             = F * (F_inv * (coeffStore * FFTPointsT))[0:n]
+    (coeffStore * FFTPointsT)[i] = coeffStore[i] @ FFTPointsT[i] // i in [0:2n] 
+Verifier.UniversalVerify:
+    m: numBlobs
+    K: randomsFr // k = 1 without loss of generality
+    genRhsG1:
+        aggCommit: commits @ K // sum over samples in rows
+        aggPolyG1: sum_j(frames[i]) @ K
+        offsetG1: [w^rbo(samples[k].id): k = 1, 2, ..., K]^l @ proofs @ K // rbo at Verifier.UniversalVerifySubBatch
+        rhsG1 = aggCommit - aggPolyG1 + offsetG1
 ```
 
 # Data structures
