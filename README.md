@@ -28,13 +28,13 @@ EIP-7594: [From 4844 to Danksharding: a path to scaling Ethereum DA](https://eth
 
 [ethereum/c-kzg-4844](https://github.com/ethereum/c-kzg-4844): A minimal implementation of the Polynomial Commitments API for EIP-4844 and EIP-7594.
 
-[ingonyama-zk/icicle](https://github.com/ingonyama-zk/icicle): A hardware acceleration library for compute intensive cryptography.
-
 [protolambda/go-kzg](https://github.com/protolambda/go-kzg): FFT, data-recovery and KZG commitments, in Go.
 
 [A note on data availability and erasure coding](https://github.com/ethereum/research/wiki/A-note-on-data-availability-and-erasure-coding)
 
 [availproject/plonk](https://github.com/availproject/plonk/blob/v0.12.0-polygon-2/src/commitment_scheme/kzg10/key.rs#L297)
+
+[ingonyama-zk/icicle](https://github.com/ingonyama-zk/icicle): A hardware acceleration library for compute intensive cryptography.
 
 # Math
 ```
