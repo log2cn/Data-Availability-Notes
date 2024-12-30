@@ -8,7 +8,7 @@ ethereum/consensus-specs: [specs/fulu/polynomial-commitments-sampling.md](https:
 
 [ethereum/c-kzg-4844](https://github.com/ethereum/c-kzg-4844): A minimal implementation of the Polynomial Commitments API for EIP-4844 and EIP-7594.
 
-[Layr-Labs/eigenda](https://github.com/Layr-Labs/eigenda): Secure, high-throughput, and decentralized Data Availability
+[Layr-Labs/eigenda](https://github.com/Layr-Labs/eigenda): Secure, high-throughput, and decentralized Data Availability. ([docs](https://docs.eigenda.xyz/overview))
 
 [protolambda/go-kzg](https://github.com/protolambda/go-kzg): FFT, data-recovery and KZG commitments, in Go.
 
