@@ -1,12 +1,24 @@
-# Refs 
+# Implementations and underlying libraries
+
+ethereum/consensus-specs: [specs/fulu/polynomial-commitments-sampling.md](https://github.com/ethereum/consensus-specs/blob/dev/specs/fulu/polynomial-commitments-sampling.md)
+
+[ethereum/c-kzg-4844](https://github.com/ethereum/c-kzg-4844): A minimal implementation of the Polynomial Commitments API for EIP-4844 and EIP-7594.
 
 [Layr-Labs/eigenda](https://github.com/Layr-Labs/eigenda)
+
+[protolambda/go-kzg](https://github.com/protolambda/go-kzg): FFT, data-recovery and KZG commitments, in Go.
+
+[availproject/plonk](https://github.com/availproject/plonk/blob/v0.12.0-polygon-2/src/commitment_scheme/kzg10/key.rs#L297)
+
+[crate-crypto](https://github.com/orgs/crate-crypto/repositories)
+
+# Posts and discussions
 
 [Data availability encoding](https://notes.ethereum.org/@dankrad/danksharding_encoding)
 
 [A Universal Verification Equation for Data Availability Sampling](https://ethresear.ch/t/a-universal-verification-equation-for-data-availability-sampling/13240)
 
-[ethereum/consensus-specs](https://github.com/ethereum/consensus-specs#specs): [specs/fulu/polynomial-commitments-sampling.md](https://github.com/ethereum/consensus-specs/blob/dev/specs/fulu/polynomial-commitments-sampling.md)
+[ethereum/consensus-specs](https://github.com/ethereum/consensus-specs#specs)
 
 [A Mathematical Theory of Danksharding](https://github.com/ingonyama-zk/papers/blob/main/danksharding_math.pdf)
 
@@ -26,13 +38,7 @@ l2beat: [Data Availability Summary](https://l2beat.com/data-availability/summary
 
 [Multiplying a Toeplitz matrix by a vector](https://alinush.github.io/2020/03/19/multiplying-a-vector-by-a-toeplitz-matrix.html)
 
-[ethereum/c-kzg-4844](https://github.com/ethereum/c-kzg-4844): A minimal implementation of the Polynomial Commitments API for EIP-4844 and EIP-7594.
-
-[protolambda/go-kzg](https://github.com/protolambda/go-kzg): FFT, data-recovery and KZG commitments, in Go.
-
 [A note on data availability and erasure coding](https://github.com/ethereum/research/wiki/A-note-on-data-availability-and-erasure-coding)
-
-[availproject/plonk](https://github.com/availproject/plonk/blob/v0.12.0-polygon-2/src/commitment_scheme/kzg10/key.rs#L297)
 
 # Math
 ```
