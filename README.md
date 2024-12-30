@@ -34,8 +34,6 @@ l2beat: [Data Availability Summary](https://l2beat.com/data-availability/summary
 
 [availproject/plonk](https://github.com/availproject/plonk/blob/v0.12.0-polygon-2/src/commitment_scheme/kzg10/key.rs#L297)
 
-[ingonyama-zk/icicle](https://github.com/ingonyama-zk/icicle): A hardware acceleration library for compute intensive cryptography.
-
 # Math
 ```
     Coeff = F^(-1) * P * Y // compute Coeff from Y
