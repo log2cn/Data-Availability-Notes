@@ -22,8 +22,6 @@ ethereum/consensus-specs: [specs/fulu/polynomial-commitments-sampling.md](https:
 
 [A Universal Verification Equation for Data Availability Sampling](https://ethresear.ch/t/a-universal-verification-equation-for-data-availability-sampling/13240)
 
-[ethereum/consensus-specs](https://github.com/ethereum/consensus-specs#specs)
-
 [A Mathematical Theory of Danksharding](https://github.com/ingonyama-zk/papers/blob/main/danksharding_math.pdf)
 
 [KZG polynomial commitments](https://dankradfeist.de/ethereum/2020/06/16/kate-polynomial-commitments.html)
