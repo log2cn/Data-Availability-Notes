@@ -1,3 +1,19 @@
+# Posts and discussions
+
+[Avail paper](https://github.com/availproject/poly-multiproof/blob/master/spec/src/1_overview.md)
+
+[data availibility | ethresear.ch](https://ethresear.ch/search?q=data%20availibility)
+
+[Data Availability Sampling Phase 1 Proposal](https://hackmd.io/@vbuterin/das)
+
+EIP-7594: [From 4844 to Danksharding: a path to scaling Ethereum DA](https://ethresear.ch/t/from-4844-to-danksharding-a-path-to-scaling-ethereum-da/18046)
+
+[Data Availability | L2BEAT](https://l2beat.com/data-availability/summary)
+
+[2D data availability with Kate commitments](https://ethresear.ch/t/2d-data-availability-with-kate-commitments/8081)
+
+[A note on data availability and erasure coding](https://github.com/ethereum/research/wiki/A-note-on-data-availability-and-erasure-coding)
+
 # Implementations and underlying libraries
 
 ethereum/consensus-specs: [specs/fulu/polynomial-commitments-sampling.md](https://github.com/ethereum/consensus-specs/blob/dev/specs/fulu/polynomial-commitments-sampling.md)
@@ -11,20 +27,6 @@ ethereum/consensus-specs: [specs/fulu/polynomial-commitments-sampling.md](https:
 [availproject/plonk](https://github.com/availproject/plonk/blob/v0.12.0-polygon-2/src/commitment_scheme/kzg10/key.rs#L297)
 
 [crate-crypto](https://github.com/orgs/crate-crypto/repositories)
-
-# Posts and discussions
-
-[data availibility | ethresear.ch](https://ethresear.ch/search?q=data%20availibility)
-
-[Data Availability Sampling Phase 1 Proposal](https://hackmd.io/@vbuterin/das)
-
-EIP-7594: [From 4844 to Danksharding: a path to scaling Ethereum DA](https://ethresear.ch/t/from-4844-to-danksharding-a-path-to-scaling-ethereum-da/18046)
-
-[Data Availability | L2BEAT](https://l2beat.com/data-availability/summary)
-
-[2D data availability with Kate commitments](https://ethresear.ch/t/2d-data-availability-with-kate-commitments/8081)
-
-[A note on data availability and erasure coding](https://github.com/ethereum/research/wiki/A-note-on-data-availability-and-erasure-coding)
 
 # Data availability sampling, Compute/verify proofs
 [Data availability encoding](https://notes.ethereum.org/@dankrad/danksharding_encoding)
