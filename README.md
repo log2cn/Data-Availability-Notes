@@ -41,9 +41,9 @@ ethereum/consensus-specs: [specs/fulu/polynomial-commitments-sampling.md](https:
 
 # KZG polynomial commitments
 
-[KZG polynomial commitments](https://dankradfeist.de/ethereum/2020/06/16/kate-polynomial-commitments.html)
-
 [BLS12-381 For The Rest Of Us](https://hackmd.io/@benjaminion/bls12-381)
+
+[KZG polynomial commitments](https://dankradfeist.de/ethereum/2020/06/16/kate-polynomial-commitments.html)
 
 [PCS multiproofs using random evaluation](https://dankradfeist.de/ethereum/2021/06/18/pcs-multiproofs.html)
 
