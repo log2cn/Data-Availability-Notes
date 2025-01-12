@@ -16,8 +16,6 @@ EIP-7594: [From 4844 to Danksharding: a path to scaling Ethereum DA](https://eth
 
 [ethereum/EIPs: eip-4844.md](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-4844.md)
 
-[PeerDAS from scratch](https://hackmd.io/@manunalepa/peerDAS)
-
 # Implementations and underlying libraries
 
 ethereum/consensus-specs: [specs/fulu/polynomial-commitments-sampling.md](https://github.com/ethereum/consensus-specs/blob/dev/specs/fulu/polynomial-commitments-sampling.md)
