@@ -1,7 +1,5 @@
 # Posts and discussions
 
-[Avail paper](https://github.com/availproject/poly-multiproof/blob/master/spec/src/1_overview.md)
-
 [data availibility | ethresear.ch](https://ethresear.ch/search?q=data%20availibility)
 
 [Data Availability Sampling Phase 1 Proposal](https://hackmd.io/@vbuterin/das)
