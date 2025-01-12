@@ -14,6 +14,8 @@ EIP-7594: [From 4844 to Danksharding: a path to scaling Ethereum DA](https://eth
 
 [A note on data availability and erasure coding](https://github.com/ethereum/research/wiki/A-note-on-data-availability-and-erasure-coding)
 
+[ethereum/EIPs: eip-4844.md](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-4844.md)
+
 # Implementations and underlying libraries
 
 ethereum/consensus-specs: [specs/fulu/polynomial-commitments-sampling.md](https://github.com/ethereum/consensus-specs/blob/dev/specs/fulu/polynomial-commitments-sampling.md)
